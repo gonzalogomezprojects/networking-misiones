@@ -3,11 +3,30 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --muted: #6b7280; /* zinc-600 */
+  --border: #e5e7eb; /* gray-200 */
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --accent: #111827; /* gray-900 */
+  /* Brand (gold) */
+  --brand: #D4AF37; /* primary gold */
+  --brand-foreground: #0b0b0b; /* text on gold */
+  --brand-soft: #F3E2B8; /* soft gold for backgrounds */
+  --brand-dark: #A37E1C; /* deep gold for hover/borders */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-accent: var(--accent);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-dark: var(--brand-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +35,32 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --muted: #9ca3af; /* zinc-400 */
+    --border: #2e2e2e;
+    --card: #0f0f0f;
+    --card-foreground: #ededed;
+    --accent: #e5e7eb;
+    /* Brand stays gold but with slightly adjusted contrast on dark */
+    --brand: #D4AF37;
+    --brand-foreground: #0b0b0b;
+    --brand-soft: #3b2f0a; /* soft gold-ish dark surface */
+    --brand-dark: #8c6c17;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Accesibilidad: foco visible consistente */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Enlaces: subrayado sutil al pasar */
+a:hover {
+  text-decoration: underline;
 }

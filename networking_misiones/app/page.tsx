@@ -1,52 +1,39 @@
 import Link from "next/link";
+import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b border-black/10 dark:border-white/15">
-        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="text-lg font-semibold">
-            Networking Misiones
-          </Link>
-          <nav className="flex gap-4 text-sm">
-            <Link href="#mision" className="hover:underline">Misión</Link>
-            <Link href="#vision" className="hover:underline">Visión</Link>
-            <Link href="#contacto" className="hover:underline">Contacto</Link>
-          </nav>
-        </div>
-      </header>
-
       <main className="mx-auto max-w-6xl px-6">
         {/* Hero */}
         <section className="py-20">
           <div className="grid gap-6 md:grid-cols-2 md:items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-brand to-brand-dark bg-clip-text text-transparent">
                 Comunidad tech en Misiones: conectar, crear y crecer.
               </h1>
-              <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+              <p className="mt-2 text-sm uppercase tracking-widest text-muted">Tecnología, experiencia y sinergia</p>
+              <p className="mt-4 text-lg text-muted">
                 Apasionados por la tecnología, la innovación y las startups. Compartimos experiencias, organizamos encuentros y abrimos oportunidades reales para todos.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href="#contacto"
-                  className="rounded-full bg-foreground text-background px-5 py-2 text-sm font-medium hover:opacity-90"
+                  className="rounded-full bg-brand text-brand-foreground px-5 py-2 text-sm font-medium shadow-sm hover:brightness-110"
                 >
                   Unite a la comunidad
                 </Link>
                 <Link
                   href="#proyectos"
-                  className="rounded-full border border-black/10 dark:border-white/15 px-5 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10"
+                  className="rounded-full border border-brand px-5 py-2 text-sm font-medium hover:bg-brand/10"
                 >
                   Ver proyectos
                 </Link>
               </div>
             </div>
-            <div className="rounded-xl border border-black/10 dark:border-white/15 p-6">
-              <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                Próximamente: registro de usuarios, publicación de proyectos, noticias y financiamiento. Roles USER y ADMIN con gestión desde Postgres.
-              </p>
+            <div className="flex items-center justify-center md:justify-end">
+        <Image src="/assets/logo.jpg" alt="Networking Misiones" width={220} height={220} priority className="rounded-xl" />
             </div>
           </div>
         </section>
